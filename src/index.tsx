@@ -5,7 +5,12 @@ import App from './containers/App'
 
 import './index.css'
 
-import { nodeRequire, inCEPEnvironment } from './utils'
+import {
+  nodeRequire,
+  inCEPEnvironment,
+  evalExtendscript,
+  prepExtendscriptEnvironment,
+} from './utils'
 
 if (inCEPEnvironment()) {
   const platform = nodeRequire('os').platform()
@@ -18,6 +23,8 @@ if (inCEPEnvironment()) {
   //   path.join(window.cep_node.__dirname, 'CSXS', 'manifest.xml')
   // )
   // console.log(result.toString())
+
+  // evalExtendscript(`alert("Hello ${Date.now()}");`)
 }
 
 console.log('cep', window.cep)
