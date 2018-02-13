@@ -12,12 +12,12 @@ if (inCEPEnvironment()) {
   console.log('CEP', platform)
 
   const fs = nodeRequire('fs-extra')
-  const path = nodeRequire('path')
+  // const path = nodeRequire('path')
 
-  const result = fs.readFileSync(
-    path.join(window.cep_node.__dirname, 'CSXS', 'manifest.xml')
-  )
-  console.log(result.toString())
+  // const result = fs.readFileSync(
+  //   path.join(window.cep_node.__dirname, 'CSXS', 'manifest.xml')
+  // )
+  // console.log(result.toString())
 }
 
 console.log('cep', window.cep)
