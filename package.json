@@ -4,9 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "parcel src/index.html"
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
   },
   "dependencies": {
+    "fs-extra": "^5.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },
