@@ -10,9 +10,15 @@ import { nodeRequire, inCEPEnvironment } from './utils'
 if (inCEPEnvironment()) {
   const platform = nodeRequire('os').platform()
   console.log('CEP', platform)
-}
 
-// console.log(result.toString())
+  const fs = nodeRequire('fs-extra')
+  const path = nodeRequire('path')
+
+  const result = fs.readFileSync(
+    path.join(window.cep_node.__dirname, 'CSXS', 'manifest.xml')
+  )
+  console.log(result.toString())
+}
 
 console.log('cep', window.cep)
 console.log('cep_node', window.cep_node)

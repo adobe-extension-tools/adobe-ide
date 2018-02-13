@@ -60,7 +60,7 @@ export function getCurrentApiVersion() {
 
 export function openURLInDefaultBrowser(url) {
   if (inCEPEnvironment()) {
-    cep.util.openURLInDefaultBrowser(url)
+    window.cep.util.openURLInDefaultBrowser(url)
   } else {
     window.open(url)
   }
@@ -187,9 +187,9 @@ export function nodeRequire(path) {
   if (!inCEPEnvironment()) console.warn('Not in CEP environment.')
   try {
     if (path.substr(0, 1) === '.') {
-      return cep_node.require(__dirname + path.substr(1))
+      return window.cep_node.require(__dirname + path.substr(1))
     } else {
-      return cep_node.require(path)
+      return window.cep_node.require(path)
     }
   } catch (err) {
     console.log(err)
