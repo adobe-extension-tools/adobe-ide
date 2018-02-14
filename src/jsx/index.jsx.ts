@@ -5,6 +5,8 @@ function test() {
   return JSON.stringify({ foo: 'bar', date: Date.now() })
 }
 
+writeLn(`yo ${Date.now()}`)
+
 $['com.fusepilot.test'] = {
   test,
 }

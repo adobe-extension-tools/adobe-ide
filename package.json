@@ -5,10 +5,9 @@
   "license": "MIT",
   "scripts": {
     "start": "concurrently \"yarn run start-ui\" \"yarn run start-jsx\"",
-    "start-ui": "parcel src/ui/index.html",
-    "start-jsx":
-      "parcel watch src/jsx/index.ts --out-dir dist/jsx --no-hmr --no-source-maps",
-    "build": "parcel build src/ui/index.html"
+    "start-ui": "parcel src/ui/index.ui.html",
+    "start-jsx": "parcel watch src/jsx/index.jsx.ts --no-hmr --no-source-maps",
+    "build": "parcel build src/ui/index.ui.html"
   },
   "dependencies": {
     "fs-extra": "^5.0.0",

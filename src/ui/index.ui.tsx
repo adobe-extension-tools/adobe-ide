@@ -3,24 +3,27 @@ import * as ReactDOM from 'react-dom'
 
 import App from './containers/App'
 
-import './index.css'
+import './index.ui.css'
 
 import {
   nodeRequire,
   inCEPEnvironment,
   evalExtendscript,
-  prepExtendscriptEnvironment,
   loadExtendscript,
+  getExtensionPath,
 } from './utils'
+
+import * as path from 'path'
 
 if (inCEPEnvironment()) {
   const platform = nodeRequire('os').platform()
-  // console.log('CEP', platform)
-
   const fs = nodeRequire('fs-extra')
 
-  loadExtendscript('jsx/index.js')
-  // const path = nodeRequire('path')
+  const manifest = fs.readJSONSync(
+    path.join(getExtensionPath(), 'manifest.json')
+  )
+
+  loadExtendscript(manifest['index.jsx.ts']) //)
 
   // const result = fs.readFileSync(
   //   path.join(window.cep_node.__dirname, 'CSXS', 'manifest.xml')

@@ -136,6 +136,10 @@ export function getSystemPath(pathType: string) {
   return path
 }
 
+export function getExtensionPath() {
+  return getSystemPath(SystemPath.EXTENSION)
+}
+
 function evalScript(script: string, callback: Function) {
   if (callback === null || callback === undefined) {
     callback = function callback(result) {}
@@ -144,6 +148,8 @@ function evalScript(script: string, callback: Function) {
 }
 
 export function loadExtendscript(fileName: string) {
+  if (!fileName) throw Error('Filename cannot be empty.')
+
   var extensionRoot = getSystemPath(SystemPath.EXTENSION)
   return new Promise(function(resolve, reject) {
     evalScript(
