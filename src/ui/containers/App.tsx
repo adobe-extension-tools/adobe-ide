@@ -14,7 +14,7 @@ class AdobeAppInfo extends React.Component {
     const version = await evalExtendscript(`app.version`)
     const name = await evalExtendscript(`app.name`)
     const app = await evalExtendscript(`JSON.stringify(app)`)
-    console.log(app)
+    // console.log(app)
 
     this.setState({ name, version })
   }
@@ -24,6 +24,13 @@ class AdobeAppInfo extends React.Component {
       <div className="AdobeAppInfo">
         Name: {this.state.name}
         Version: {this.state.version}
+        <button
+          onClick={() => {
+            evalExtendscript(`$['com.fusepilot.test'].test()`)
+          }}
+        >
+          Click
+        </button>
       </div>
     )
   }

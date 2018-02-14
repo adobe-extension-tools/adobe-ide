@@ -10,13 +10,16 @@ import {
   inCEPEnvironment,
   evalExtendscript,
   prepExtendscriptEnvironment,
+  loadExtendscript,
 } from './utils'
 
 if (inCEPEnvironment()) {
   const platform = nodeRequire('os').platform()
-  console.log('CEP', platform)
+  // console.log('CEP', platform)
 
   const fs = nodeRequire('fs-extra')
+
+  loadExtendscript('jsx/index.js')
   // const path = nodeRequire('path')
 
   // const result = fs.readFileSync(
@@ -27,8 +30,8 @@ if (inCEPEnvironment()) {
   // evalExtendscript(`alert("Hello ${Date.now()}");`)
 }
 
-console.log('cep', window.cep)
-console.log('cep_node', window.cep_node)
-console.log('adobe_cep', window.__adobe_cep__)
+// console.log('cep', window.cep)
+// console.log('cep_node', window.cep_node)
+// console.log('adobe_cep', window.__adobe_cep__)
 
 ReactDOM.render(<App />, document.getElementById('root') as HTMLElement)

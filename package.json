@@ -4,8 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "start": "concurrently \"yarn run start-ui\" \"yarn run start-jsx\"",
+    "start-ui": "parcel src/ui/index.html",
+    "start-jsx":
+      "parcel watch src/jsx/index.ts --out-dir dist/jsx --no-hmr --no-source-maps",
+    "build": "parcel build src/ui/index.html"
   },
   "dependencies": {
     "fs-extra": "^5.0.0",
@@ -17,6 +20,8 @@
     "@types/react-dom": "^16.0.3",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "babel-preset-extendscript": "^0.0.3",
+    "concurrently": "^3.5.1",
     "parcel-bundler": "^1.5.1",
     "parcel-plugin-cep": "link:../parcel-plugin-cep",
     "typescript": "^2.7.1"
