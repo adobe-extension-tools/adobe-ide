@@ -3,7 +3,6 @@ import * as React from 'react'
 import './App.css'
 
 import { evalExtendscript, getExtensionPath } from '../utils'
-import log from '../log'
 
 class AdobeAppInfo extends React.Component {
   state = {
@@ -22,7 +21,8 @@ class AdobeAppInfo extends React.Component {
   }
 
   onClick = async () => {
-    log.info('clicked')
+    console.log(this.props)
+    // log.info('clicked')
 
     const result = await evalExtendscript(
       `$.global['com.fusepilot.test'].test()`
@@ -42,10 +42,15 @@ class AdobeAppInfo extends React.Component {
 }
 
 export default class App extends React.Component {
+  onClick = async () => {
+    this.props.logger.info('clicked')
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Buck</h1>
+        <button onClick={this.onClick}>Log</button>
         <AdobeAppInfo />
       </div>
     )

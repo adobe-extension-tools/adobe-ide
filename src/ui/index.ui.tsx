@@ -13,7 +13,9 @@ import {
   getExtensionPath,
 } from './utils'
 
-import log from './log'
+import { createLogger } from './log'
+
+const logger = createLogger('com.buck.publisher')
 
 import * as path from 'path'
 
@@ -22,7 +24,7 @@ if (inCEPEnvironment()) {
   const fs = nodeRequire('fs-extra')
   const extensionPath = getExtensionPath()
 
-  log.info('start', extensionPath)
+  logger.info('start', extensionPath)
 
   const manifest = fs.readJSONSync(path.join(extensionPath, 'manifest.json'))
 
@@ -36,4 +38,6 @@ if (inCEPEnvironment()) {
   // evalExtendscript(`alert("Hello ${Date.now()}");`)
 }
 
-ReactDOM.render(<App />, document.getElementById('root') as HTMLElement)
+ReactDOM.render(<App logger={logger} />, document.getElementById(
+  'root'
+) as HTMLElement)
