@@ -24,6 +24,7 @@
     "concurrently": "^3.5.1",
     "parcel-bundler": "^1.5.1",
     "parcel-plugin-cep": "link:../parcel-plugin-cep",
+    "types-for-adobe": "pravdomil/types-for-adobe",
     "typescript": "^2.7.1"
   }
 }
