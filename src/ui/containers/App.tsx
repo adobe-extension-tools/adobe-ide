@@ -12,16 +12,19 @@ class AdobeAppInfo extends React.Component {
   }
 
   async componentDidMount() {
-    const info = await evalExtendscript(`$['com.fusepilot.test'].getInfo()`)
+    const info = await evalExtendscript(
+      `$.global['com.fusepilot.test'].getInfo()`
+    )
     const extensionPath = await getExtensionPath()
     console.log(info)
 
-    this.setState({ name: info.name, version: info.version, extensionPath })
+    // this.setState({ name: info.name, version: info.version, extensionPath })
   }
 
   onClick = async () => {
-    const result = await evalExtendscript(`$['com.fusepilot.test'].test()`)
-    console.log(result)
+    const result = await evalExtendscript(
+      `$.global['com.fusepilot.test'].test()`
+    )
   }
 
   render() {

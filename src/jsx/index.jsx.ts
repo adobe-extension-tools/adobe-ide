@@ -1,20 +1,20 @@
-// import { customAlert } from './utils'
+/// <reference types="types-for-adobe/aftereffects/2018"/>
 
-// function test() {
-//   customAlert(Date.now())
-//   return JSON.stringify({ foo: 'bar', date: Date.now() })
-// }
+import { customAlert } from './utils'
 
 function test() {
-  alert(`test2 ${Date.now()}`)
+  customAlert(`${Date.now()}`)
   return JSON.stringify({ foo: 'bar' })
 }
 
 function getInfo() {
-  return JSON.stringify({ name: app.name, version: app.version })
+  return JSON.stringify({
+    name: app.name,
+    version: app.version,
+  })
 }
 
-$['com.fusepilot.test'] = {
+$.global['com.fusepilot.test'] = {
   test,
   getInfo,
 }
