@@ -2,21 +2,26 @@ import * as React from 'react'
 
 import './App.css'
 
-import { evalExtendscript } from '../utils'
+import { evalExtendscript, getExtensionPath } from '../utils'
 
 class AdobeAppInfo extends React.Component {
   state = {
     version: undefined,
     name: undefined,
+    extensionPathc: undefined,
   }
 
   async componentDidMount() {
-    const version = await evalExtendscript(`app.version`)
-    const name = await evalExtendscript(`app.name`)
-    const app = await evalExtendscript(`JSON.stringify(app)`)
-    // console.log(app)
+    const info = await evalExtendscript(`$['com.fusepilot.test'].getInfo()`)
+    const extensionPath = await getExtensionPath()
+    console.log(info)
 
-    this.setState({ name, version })
+    this.setState({ name: info.name, version: info.version, extensionPath })
+  }
+
+  onClick = async () => {
+    const result = await evalExtendscript(`$['com.fusepilot.test'].test()`)
+    console.log(result)
   }
 
   render() {
@@ -24,13 +29,8 @@ class AdobeAppInfo extends React.Component {
       <div className="AdobeAppInfo">
         Name: {this.state.name}
         Version: {this.state.version}
-        <button
-          onClick={() => {
-            evalExtendscript(`$['com.fusepilot.test'].test()`)
-          }}
-        >
-          Click
-        </button>
+        Extension Path: {this.state.extensionPath}
+        <button onClick={this.onClick}>Click</button>
       </div>
     )
   }

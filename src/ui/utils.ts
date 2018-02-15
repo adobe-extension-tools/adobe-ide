@@ -60,7 +60,7 @@ export function getCurrentApiVersion() {
   return JSON.parse(window.__adobe_cep__.getCurrentApiVersion())
 }
 
-export function openURLInDefaultBrowser(url) {
+export function openURLInDefaultBrowser(url: string) {
   if (inCEPEnvironment()) {
     window.cep.util.openURLInDefaultBrowser(url)
   } else {
@@ -76,7 +76,7 @@ export function registerKeyEventsInterest(keyEventsInterest) {
   return window.__adobe_cep__.registerKeyEventsInterest(keyEventsInterest)
 }
 
-export function setWindowTitle(title) {
+export function setWindowTitle(title: string) {
   window.__adobe_cep__.invokeSync('setWindowTitle', title)
 }
 
@@ -152,18 +152,16 @@ export function loadExtendscript(fileName: string) {
 
   var extensionRoot = getSystemPath(SystemPath.EXTENSION)
   return new Promise(function(resolve, reject) {
-    evalScript(
-      '$.evalFile("' + path.join(extensionRoot, fileName) + '")',
-      function(result) {
-        if (!result || result === 'undefined') return resolve()
+    const filePath = path.join(extensionRoot, fileName)
+    evalScript(`$.evalFile("${filePath}")`, function(result) {
+      if (!result || result === 'undefined') return resolve()
 
-        try {
-          result = JSON.parse(result)
-        } catch (err) {}
+      try {
+        result = JSON.parse(result)
+      } catch (err) {}
 
-        resolve(result)
-      }
-    )
+      resolve(result)
+    })
   })
 }
 

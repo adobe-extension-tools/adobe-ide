@@ -23,7 +23,7 @@ if (inCEPEnvironment()) {
     path.join(getExtensionPath(), 'manifest.json')
   )
 
-  loadExtendscript(manifest['index.jsx.ts']) //)
+  loadExtendscript(manifest['index.jsx.ts'])
 
   // const result = fs.readFileSync(
   //   path.join(window.cep_node.__dirname, 'CSXS', 'manifest.xml')
@@ -33,8 +33,8 @@ if (inCEPEnvironment()) {
   // evalExtendscript(`alert("Hello ${Date.now()}");`)
 }
 
-// console.log('cep', window.cep)
-// console.log('cep_node', window.cep_node)
-// console.log('adobe_cep', window.__adobe_cep__)
+console.log('cep', window.cep)
+console.log('cep_node', window.cep_node)
+console.log('adobe_cep', window.__adobe_cep__)
 
 ReactDOM.render(<App />, document.getElementById('root') as HTMLElement)
