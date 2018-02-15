@@ -3,6 +3,7 @@ import * as React from 'react'
 import './App.css'
 
 import { evalExtendscript, getExtensionPath } from '../utils'
+import log from '../log'
 
 class AdobeAppInfo extends React.Component {
   state = {
@@ -21,6 +22,8 @@ class AdobeAppInfo extends React.Component {
   }
 
   onClick = async () => {
+    log.info('clicked')
+
     const result = await evalExtendscript(
       `$.global['com.fusepilot.test'].test()`
     )

@@ -1,6 +1,8 @@
 /// <reference types="types-for-adobe/aftereffects/2018"/>
 
 import { customAlert } from './utils'
+// import * as pino from 'pino'
+// console.log(pino)
 
 function test() {
   customAlert(`${Date.now()}`)

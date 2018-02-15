@@ -13,15 +13,18 @@ import {
   getExtensionPath,
 } from './utils'
 
+import log from './log'
+
 import * as path from 'path'
 
 if (inCEPEnvironment()) {
   const platform = nodeRequire('os').platform()
   const fs = nodeRequire('fs-extra')
+  const extensionPath = getExtensionPath()
 
-  const manifest = fs.readJSONSync(
-    path.join(getExtensionPath(), 'manifest.json')
-  )
+  log.info('start', extensionPath)
+
+  const manifest = fs.readJSONSync(path.join(extensionPath, 'manifest.json'))
 
   loadExtendscript(manifest['index.jsx.ts'])
 
@@ -32,9 +35,5 @@ if (inCEPEnvironment()) {
 
   // evalExtendscript(`alert("Hello ${Date.now()}");`)
 }
-
-console.log('cep', window.cep)
-console.log('cep_node', window.cep_node)
-console.log('adobe_cep', window.__adobe_cep__)
 
 ReactDOM.render(<App />, document.getElementById('root') as HTMLElement)
