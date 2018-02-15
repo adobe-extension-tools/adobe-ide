@@ -8,17 +8,16 @@ class AdobeAppInfo extends React.Component {
   state = {
     version: undefined,
     name: undefined,
-    extensionPathc: undefined,
+    extensionPath: undefined,
   }
 
   async componentDidMount() {
-    const info = await evalExtendscript(
+    const info: any = await evalExtendscript(
       `$.global['com.fusepilot.test'].getInfo()`
     )
     const extensionPath = await getExtensionPath()
-    console.log(info)
 
-    // this.setState({ name: info.name, version: info.version, extensionPath })
+    this.setState({ name: info.name, version: info.version, extensionPath })
   }
 
   onClick = async () => {
