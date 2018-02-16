@@ -200,7 +200,8 @@ export function openURLInDefaultBrowser(url: string): number {
   if (inCEPEnvironment()) {
     return window.cep.util.openURLInDefaultBrowser(url)
   } else {
-    return window.open(url)
+    window.open(url)
+    return 0
   }
 }
 /**
@@ -428,23 +429,4 @@ export function evalExtendscript(
       doEvalScript()
     }
   })
-}
-
-/**
- * Requires a module from the extension's node_modules folder.
- *
- * @param id The id of the module.
- * @return The module.
- */
-export function nodeRequire(id: string): any {
-  if (!inCEPEnvironment()) console.warn('Not in CEP environment.')
-  try {
-    if (id.substr(0, 1) === '.') {
-      return window.cep_node.require(__dirname + id.substr(1))
-    } else {
-      return window.cep_node.require(id)
-    }
-  } catch (err) {
-    console.log(err)
-  }
 }

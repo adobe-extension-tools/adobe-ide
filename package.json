@@ -16,6 +16,8 @@
     "react-dom": "^16.2.0"
   },
   "devDependencies": {
+    "@types/fs-extra": "^5.0.0",
+    "@types/pino": "^4.7.1",
     "@types/react": "^16.0.31",
     "@types/react-dom": "^16.0.3",
     "babel-preset-env": "^1.6.1",

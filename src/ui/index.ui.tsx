@@ -1,12 +1,12 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
+import * as path from 'path'
 
 import App from './containers/App'
 
 import './index.ui.css'
 
 import {
-  nodeRequire,
   inCEPEnvironment,
   evalExtendscript,
   loadExtendscript,
@@ -15,14 +15,17 @@ import {
 
 import { createLogger } from './log'
 
+// node-require
+import os = require('os')
+// node-require
+import fs = require('fs-extra')
+
 const logger = createLogger('com.buck.publisher')
 
-import * as path from 'path'
-
 if (inCEPEnvironment()) {
-  const platform = nodeRequire('os').platform()
-  const fs = nodeRequire('fs-extra')
   const extensionPath = getExtensionPath()
+
+  const platform = os.platform()
 
   logger.info('start', extensionPath)
 

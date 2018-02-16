@@ -1,11 +1,14 @@
-import { nodeRequire } from './utils'
-const fs = nodeRequire('fs-extra')
-const os = nodeRequire('os')
-const path = nodeRequire('path')
-const pino = nodeRequire('pino')
+// node-require
+import fs = require('fs-extra')
+// node-require
+import os = require('os')
+// node-require
+import path = require('path')
+// node-require
+import pino = require('pino')
 
 function getLogPath(id: string): string {
-  const homeDir = os.homedir ? os.homedir() : process.env['HOME']
+  const homeDir = os.homedir()
   const file = `${id}.log`
   const platform = os.platform()
 
