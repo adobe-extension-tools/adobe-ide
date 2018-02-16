@@ -8,7 +8,7 @@
     "start-ui": "parcel src/ui/index.ui.html",
     "start-jsx": "parcel watch src/jsx/index.jsx.ts --no-hmr --no-source-maps",
     "build": "yarn run build-ui && yarn run build-jsx",
-    "build-ui": "parcel build src/ui/index.ui.html",
+    "build-ui": "parcel build src/ui/index.ui.html --public-url .",
     "build-jsx": "parcel build src/jsx/index.jsx.ts"
   },
   "dependencies": {
