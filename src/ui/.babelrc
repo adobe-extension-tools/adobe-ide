@@ -1,4 +1,3 @@
 {
-  "presets": ["env", "react"],
-  "plugins": ["./babel-plugin-cep"]
+  "presets": ["cep", "react"]
 }

@@ -637,6 +637,12 @@ babel-plugin-transform-strict-mode@^6.24.1:
     babel-runtime "^6.22.0"
     babel-types "^6.24.1"
 
+babel-preset-cep@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/babel-preset-cep/-/babel-preset-cep-0.0.1.tgz#dfad8b297b5c82079e3eda5afaa3cb67a0f16ba6"
+  dependencies:
+    babel-preset-env "^1.6.1"
+
 babel-preset-env@^1.6.1:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/babel-preset-env/-/babel-preset-env-1.6.1.tgz#a18b564cc9b9afdf4aae57ae3c1b0d99188e6f48"
