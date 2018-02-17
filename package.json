@@ -1,6 +1,6 @@
 {
   "name": "parcel-cep-test",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -9,13 +9,12 @@
     "start-jsx": "parcel watch src/jsx/index.jsx.ts --no-hmr --no-source-maps",
     "build": "yarn run build-ui && yarn run build-jsx",
     "build-ui": "parcel build src/ui/index.ui.html --public-url .",
-    "build-jsx": "parcel build src/jsx/index.jsx.ts"
+    "build-jsx": "parcel build src/jsx/index.jsx.ts",
+    "zxp": "node ../create-zxp/lib/bin/create-zxp.js ./dist"
   },
   "dependencies": {
     "fs-extra": "^5.0.0",
-    "pino": "^4.10.4",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "pino": "^4.10.4"
   },
   "devDependencies": {
     "@types/fs-extra": "^5.0.0",
@@ -25,10 +24,13 @@
     "babel-preset-cep": "^0.0.1",
     "babel-preset-extendscript": "^0.0.3",
     "babel-preset-react": "^6.24.1",
+    "cep-packager": "link:../cep-packager",
     "concurrently": "^3.5.1",
     "parcel-bundler": "^1.5.1",
     "parcel-plugin-cep": "link:../parcel-plugin-cep",
     "types-for-adobe": "pravdomil/types-for-adobe",
-    "typescript": "^2.7.1"
+    "typescript": "^2.7.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   }
 }
