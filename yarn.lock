@@ -1010,10 +1010,6 @@ center-align@^0.1.1:
     align-text "^0.1.3"
     lazy-cache "^1.0.3"
 
-"cep-packager@link:../cep-packager":
-  version "0.0.0"
-  uid ""
-
 chalk@0.5.1:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-0.5.1.tgz#663b3a648b68b55d04690d49167aa837858f2174"
@@ -1247,6 +1243,10 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     ripemd160 "^2.0.0"
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
+
+"create-zxp@link:../create-zxp":
+  version "0.0.0"
+  uid ""
 
 cross-spawn@^5.1.0:
   version "5.1.0"
@@ -1798,7 +1798,7 @@ globals@^9.18.0:
   version "9.18.0"
   resolved "https://registry.yarnpkg.com/globals/-/globals-9.18.0.tgz#aa3896b3e69b487f17e31ed2143d69a8e30c2d8a"
 
-graceful-fs@^4.1.2, graceful-fs@^4.1.6:
+graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.6:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
 
@@ -2302,7 +2302,7 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-lodash@^4.17.4, lodash@^4.5.1:
+lodash@^4.17.4, lodash@^4.17.5, lodash@^4.5.1:
   version "4.17.5"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
 
@@ -3929,3 +3929,14 @@ yargs@~3.10.0:
     cliui "^2.1.0"
     decamelize "^1.0.0"
     window-size "0.1.0"
+
+zxp-provider@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/zxp-provider/-/zxp-provider-1.1.3.tgz#300fdf3dc37ce20d8b7bb4b94909cb7f7e32ec4a"
+
+zxp-sign-cmd@^0.2.0:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/zxp-sign-cmd/-/zxp-sign-cmd-0.2.1.tgz#91d8c1a12993c6e9a9fbdc3d15c2f91c12577677"
+  dependencies:
+    graceful-fs "^4.1.11"
+    zxp-provider "^1.1.3"
