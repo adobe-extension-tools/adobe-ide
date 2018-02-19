@@ -1,22 +1,20 @@
 /// <reference types="types-for-adobe/aftereffects/2018"/>
 
-import { customAlert } from './utils'
-// import * as pino from 'pino'
-// console.log(pino)
+import { id } from '../shared'
 
-function test() {
-  customAlert(`${Date.now()}`)
-  return JSON.stringify({ foo: 'bar' })
+function showAlert() {
+  alert(`${Date.now()}`)
 }
 
 function getInfo() {
   return JSON.stringify({
+    id,
     name: app.name,
     version: app.version,
   })
 }
 
-$.global['com.fusepilot.test'] = {
-  test,
+$.global[id] = {
+  showAlert,
   getInfo,
 }
