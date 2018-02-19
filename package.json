@@ -10,7 +10,7 @@
     "build": "yarn run build-ui && yarn run build-jsx",
     "build-ui": "parcel build src/ui/index.ui.html --public-url .",
     "build-jsx": "parcel build src/jsx/index.jsx.ts",
-    "zxp": "node ./node_modules/create-zxp/lib/bin/create-zxp.js ./dist"
+    "zxp": "create-zxp ./dist"
   },
   "dependencies": {
     "fs-extra": "^5.0.0",
@@ -24,7 +24,7 @@
     "babel-preset-cep": "^0.0.1",
     "babel-preset-extendscript": "^0.0.3",
     "babel-preset-react": "^6.24.1",
-    "create-zxp": "link:../create-zxp",
+    "create-zxp": "^0.0.5",
     "concurrently": "^3.5.1",
     "parcel-bundler": "^1.5.1",
     "parcel-plugin-cep": "link:../parcel-plugin-cep",
