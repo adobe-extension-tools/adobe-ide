@@ -1,5 +1,3 @@
-/// <reference types="types-for-adobe/aftereffects/2018"/>
-
 import { id } from '../shared'
 
 function showAlert() {

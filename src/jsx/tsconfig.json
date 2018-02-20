@@ -3,6 +3,9 @@
     "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
-    "strict": true
-  }
+    "strict": true,
+    "types": ["AfterEffects/2018"],
+    "typeRoots": ["../../node_modules/types-for-adobe"]
+  },
+  "include": ["./**/*"]
 }

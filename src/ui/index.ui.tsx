@@ -11,6 +11,7 @@ import {
   evalExtendscript,
   loadExtendscript,
   getExtensionPath,
+  getHostEnvironment,
 } from 'cep-interface'
 
 // node-require
@@ -30,6 +31,8 @@ if (inCEPEnvironment()) {
   const manifest = fs.readJSONSync(path.join(extensionPath, 'manifest.json'))
 
   loadExtendscript(manifest['index.jsx.ts'])
+
+  const skinInfo = getHostEnvironment()
 
   // const result = fs.readFileSync(
   //   path.join(window.cep_node.__dirname, 'CSXS', 'manifest.xml')
