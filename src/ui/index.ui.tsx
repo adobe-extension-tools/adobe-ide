@@ -11,7 +11,7 @@ import {
   evalExtendscript,
   loadExtendscript,
   getExtensionPath,
-} from './utils'
+} from 'cep-interface'
 
 import { createLogger } from './log'
 

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import './AdobeAppInfo.css'
-import { evalExtendscript, getExtensionPath } from '../utils'
+import { evalExtendscript, getExtensionPath } from 'cep-interface'
 import { id } from '../../shared'
 
 export default class AdobeAppInfo extends React.Component {
