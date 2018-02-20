@@ -13,14 +13,12 @@ import {
   getExtensionPath,
 } from 'cep-interface'
 
-import { createLogger } from './log'
-
 // node-require
 import os = require('os')
 // node-require
 import fs = require('fs-extra')
 
-const logger = createLogger('com.buck.publisher')
+import { logger } from './logger'
 
 if (inCEPEnvironment()) {
   const extensionPath = getExtensionPath()
@@ -41,6 +39,4 @@ if (inCEPEnvironment()) {
   // evalExtendscript(`alert("Hello ${Date.now()}");`)
 }
 
-ReactDOM.render(<App logger={logger} />, document.getElementById(
-  'root'
-) as HTMLElement)
+ReactDOM.render(<App />, document.getElementById('root') as HTMLElement)

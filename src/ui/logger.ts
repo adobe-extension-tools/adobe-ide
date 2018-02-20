@@ -34,3 +34,5 @@ export function createLogger(id: string) {
   const logPath = getLogPath(id)
   return pino({}, fs.createWriteStream(logPath, { flags: 'a' }))
 }
+
+export const logger = createLogger('com.buck.publisher')

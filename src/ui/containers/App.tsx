@@ -3,10 +3,11 @@ import * as React from 'react'
 import './App.css'
 
 import AdobeAppInfo from '../components/AdobeAppInfo'
+import { logger } from '../logger'
 
 export default class App extends React.Component {
   onClick = async () => {
-    this.props.logger.info('clicked')
+    logger.info('clicked')
   }
 
   render() {
