@@ -2921,8 +2921,8 @@ physical-cpu-count@^2.0.0:
   resolved "https://registry.yarnpkg.com/physical-cpu-count/-/physical-cpu-count-2.0.0.tgz#18de2f97e4bf7a9551ad7511942b5496f7aba660"
 
 pino@^4.10.4:
-  version "4.10.4"
-  resolved "https://registry.yarnpkg.com/pino/-/pino-4.10.4.tgz#71c2e5f61b3e547c6f31a185dde4a01272372c15"
+  version "4.11.0"
+  resolved "https://registry.yarnpkg.com/pino/-/pino-4.11.0.tgz#29ba036d065b1bea17647c4a42a1f7b8b37f8be0"
   dependencies:
     chalk "^2.3.0"
     fast-json-parse "^1.0.3"
@@ -3986,8 +3986,8 @@ types-for-adobe@pravdomil/types-for-adobe:
   resolved "https://codeload.github.com/pravdomil/types-for-adobe/tar.gz/3ca734d577216351a9fc31389c2e6e93a074bd23"
 
 typescript@^2.7.1:
-  version "2.7.1"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.7.1.tgz#bb3682c2c791ac90e7c6210b26478a8da085c359"
+  version "2.7.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.7.2.tgz#2d615a1ef4aee4f574425cdff7026edf81919836"
 
 ua-parser-js@^0.7.9:
   version "0.7.17"
