@@ -370,6 +370,13 @@ function evalScript(script: string, callback: (executionResult: any) => void) {
   if (callback === null || callback === undefined) {
     callback = function callback(result) {}
   }
+  script = `
+  try {
+    ${script}
+  } catch(e) {
+    '{"error": "' + e.name + '", ' + '"message": "' + e.message.replace(/"/g, \"'\") + '"}'
+  }
+  `
   window.__adobe_cep__.evalScript(script, callback)
 }
 
@@ -411,13 +418,19 @@ export function evalExtendscript(
 
   return new Promise(function(resolve, reject) {
     var doEvalScript = function() {
-      evalScript(script, function(executionResult: string) {
+      evalScript(script, function(executionResult: any) {
         if (!executionResult || executionResult === 'undefined')
           return resolve()
 
         try {
           executionResult = JSON.parse(executionResult)
         } catch (err) {}
+
+        if (executionResult.error != undefined) {
+          throw new Error(
+            `ExtendScript ${executionResult.error}: ${executionResult.message}`
+          )
+        }
 
         resolve(executionResult)
       })
