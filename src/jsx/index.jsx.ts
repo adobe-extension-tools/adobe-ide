@@ -3,7 +3,7 @@
 import { id } from '../shared'
 
 function showAlert() {
-  alert(`${Date.now()}`)
+  alert(`Alert from Extendscript.\n${new Date()}`)
 }
 
 function getInfo() {

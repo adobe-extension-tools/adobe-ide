@@ -24,7 +24,7 @@ export default class AdobeAppInfo extends React.Component {
   }
 
   onClick = async () => {
-    const result = await evalExtendscript(`$.global["${id}"].alert()`)
+    const result = await evalExtendscript(`$.global["${id}"].showAlert()`)
   }
 
   render() {
