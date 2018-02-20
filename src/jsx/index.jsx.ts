@@ -1,7 +1,7 @@
 import { id } from '../shared'
 
 function showAlert() {
-  alert(`Alert from Extendscript.\n${new Date()}`)
+  alert(`Alert from Extendscript.\n${new Date().toString()}`)
 }
 
 function getInfo() {
