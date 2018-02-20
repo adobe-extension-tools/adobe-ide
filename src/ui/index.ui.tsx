@@ -12,7 +12,10 @@ import {
   loadExtendscript,
   getExtensionPath,
   getHostEnvironment,
+<<<<<<< HEAD
   RGBColor,
+=======
+>>>>>>> 75964668ae098b2f09a36c9c86efb7354bbedfbd
 } from 'cep-interface'
 
 // node-require
