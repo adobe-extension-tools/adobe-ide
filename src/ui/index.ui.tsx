@@ -4,7 +4,7 @@ import * as path from 'path'
 
 import App from './containers/App'
 
-// import './index.ui.css'
+import './index.ui.css'
 
 import {
   inCEPEnvironment,
@@ -12,10 +12,7 @@ import {
   loadExtendscript,
   getExtensionPath,
   getHostEnvironment,
-<<<<<<< HEAD
   RGBColor,
-=======
->>>>>>> 75964668ae098b2f09a36c9c86efb7354bbedfbd
 } from 'cep-interface'
 
 // node-require
@@ -40,9 +37,9 @@ if (inCEPEnvironment()) {
   if (host) {
     const skin = host.appSkinInfo
     const bgColor = skin.panelBackgroundColor.color as RGBColor
-    document.body.style.backgroundColor = `rgb(${bgColor.red}, ${
-      bgColor.green
-    }, ${bgColor.blue})`
+    document.body.style.background = `rgb(${bgColor.red}, ${bgColor.green}, ${
+      bgColor.blue
+    })`
   }
 
   // const result = fs.readFileSync(
