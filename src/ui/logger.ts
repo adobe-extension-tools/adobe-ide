@@ -7,6 +7,8 @@ import path = require('path')
 // node-require
 import pino = require('pino')
 
+import { id } from '../shared'
+
 function getLogPath(id: string): string {
   const homeDir = os.homedir()
   const file = `${id}.log`
@@ -30,9 +32,9 @@ function getLogPath(id: string): string {
   }
 }
 
-export function createLogger(id: string) {
-  const logPath = getLogPath(id)
+export function createLogger(logPath: string) {
   return pino({}, fs.createWriteStream(logPath, { flags: 'a' }))
 }
 
-export const logger = createLogger('com.buck.publisher')
+export const logPath = getLogPath(id)
+export const logger = createLogger(logPath)

@@ -2,6 +2,7 @@ import * as React from 'react'
 import './AdobeAppInfo.css'
 import { evalExtendscript, getExtensionPath } from 'cep-interface'
 import { id } from '../../shared'
+import { logPath } from '../logger'
 
 export default class AdobeAppInfo extends React.Component {
   state = {
@@ -35,6 +36,7 @@ export default class AdobeAppInfo extends React.Component {
           <li>Name: {this.state.name}</li>
           <li>Version: {this.state.version}</li>
           <li>Extension Path: {this.state.extensionPath}</li>
+          <li>Log: {logPath}</li>
         </ul>
         <button onClick={this.onClick}>Alert from Extendscript</button>
       </div>
