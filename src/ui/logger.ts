@@ -13,16 +13,16 @@ function getLogPath(id: string): string {
   const platform = os.platform()
 
   switch (platform) {
-    case 'linux': {
-      return path.join(homeDir, '.logs', file)
-    }
-
     case 'darwin': {
       return path.join(homeDir, 'Library', 'Logs', file)
     }
 
     case 'win32': {
       return path.join(homeDir, 'AppData', 'Roaming', file)
+    }
+
+    case 'linux': {
+      return path.join(homeDir, '.logs', file)
     }
 
     default:
