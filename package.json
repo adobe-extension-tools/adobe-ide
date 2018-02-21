@@ -1,6 +1,11 @@
 {
   "name": "react-parcel-cep-starter",
   "version": "0.0.1",
+  "cep": {
+    "name": "React Parcel CEP Starter",
+    "id": "com.mycompany.myextension",
+    "hosts": "*"
+  },
   "main": "index.js",
   "license": "MIT",
   "scripts": {
