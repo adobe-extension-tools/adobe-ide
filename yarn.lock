@@ -672,9 +672,9 @@ babel-preset-env@^1.6.1:
     invariant "^2.2.2"
     semver "^5.3.0"
 
-babel-preset-extendscript@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/babel-preset-extendscript/-/babel-preset-extendscript-0.0.3.tgz#4e1cd03d34a5e2750e076070d50faa2070cf432f"
+babel-preset-extendscript@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/babel-preset-extendscript/-/babel-preset-extendscript-0.1.0.tgz#94c0b5fde925ef8c03e843f3f999efbd2e57d9d0"
   dependencies:
     babel-plugin-check-es2015-constants "^6.3.13"
     babel-plugin-transform-es2015-arrow-functions "^6.3.13"
@@ -1041,9 +1041,9 @@ center-align@^0.1.1:
     align-text "^0.1.3"
     lazy-cache "^1.0.3"
 
-cep-interface@0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/cep-interface/-/cep-interface-0.0.3.tgz#96ed064813791e9db56bc9663a117a62cfa6b862"
+cep-interface@0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/cep-interface/-/cep-interface-0.0.4.tgz#7d139af905fd424130813a2fe29ac40ef00f6dc6"
 
 chalk@0.5.1:
   version "0.5.1"
