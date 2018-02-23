@@ -9,11 +9,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "concurrently \"yarn run start-ui\" \"yarn run start-jsx\"",
-    "start-ui": "parcel src/ui/index.ui.html",
+    "start": "concurrently \"yarn run start-js\" \"yarn run start-jsx\"",
+    "start-js": "parcel src/js/index.html",
     "start-jsx": "parcel watch src/jsx/index.jsx.ts --no-hmr --no-source-maps",
-    "build": "yarn run build-ui && yarn run build-jsx",
-    "build-ui": "parcel build src/ui/index.ui.html --public-url .",
+    "build": "yarn run build-js && yarn run build-jsx",
+    "build-js": "parcel build src/js/index.html --public-url .",
     "build-jsx": "parcel build src/jsx/index.jsx.ts",
     "zxp": "create-zxp ./dist"
   },

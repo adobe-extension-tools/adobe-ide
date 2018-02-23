@@ -4,7 +4,7 @@ import * as path from 'path'
 
 import App from './containers/App'
 
-import './index.ui.css'
+import './index.css'
 
 import {
   inCEPEnvironment,
