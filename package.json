@@ -19,24 +19,24 @@
   },
   "dependencies": {
     "fs-extra": "^5.0.0",
-    "pino": "^4.10.4"
+    "pino": "^4.16.1"
   },
   "devDependencies": {
-    "@types/fs-extra": "^5.0.0",
-    "@types/pino": "^4.7.1",
-    "@types/react": "^16.0.31",
-    "@types/react-dom": "^16.0.3",
-    "babel-preset-cep": "^0.0.1",
-    "babel-preset-extendscript": "^0.1.0",
+    "@types/fs-extra": "^5.0.2",
+    "@types/pino": "^4.16.0",
+    "@types/react": "^16.3.14",
+    "@types/react-dom": "^16.0.5",
+    "babel-preset-cep": "^0.0.3",
+    "babel-preset-extendscript": "^0.1.1",
     "babel-preset-react": "^6.24.1",
     "concurrently": "^3.5.1",
-    "create-zxp": "^0.0.6",
-    "parcel-bundler": "^1.6.2",
-    "parcel-plugin-cep": "0.1.0",
-    "cep-interface": "0.0.4",
-    "react": "^16.3.0-alpha.1",
-    "react-dom": "^16.3.0-alpha.1",
+    "create-zxp": "^0.1.0",
+    "parcel-bundler": "^1.8.1",
+    "parcel-plugin-cep": "^0.1.0",
+    "cep-interface": "^1.0.0-beta.9",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
     "types-for-adobe": "pravdomil/types-for-adobe",
-    "typescript": "^2.7.1"
+    "typescript": "^2.8.3"
   }
 }
