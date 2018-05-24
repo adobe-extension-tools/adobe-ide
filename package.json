@@ -32,7 +32,7 @@
     "concurrently": "^3.5.1",
     "create-zxp": "^0.0.6",
     "parcel-bundler": "^1.6.2",
-    "parcel-plugin-cep": "link:../parcel-plugin-cep",
+    "parcel-plugin-cep": "0.1.0",
     "cep-interface": "0.0.4",
     "react": "^16.3.0-alpha.1",
     "react-dom": "^16.3.0-alpha.1",

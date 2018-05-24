@@ -2864,9 +2864,12 @@ parcel-bundler@^1.6.2:
     worker-farm "^1.5.2"
     ws "^4.0.0"
 
-"parcel-plugin-cep@link:../parcel-plugin-cep":
-  version "0.0.0"
-  uid ""
+parcel-plugin-cep@0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/parcel-plugin-cep/-/parcel-plugin-cep-0.1.0.tgz#285779219ece2def08912c6e59c00826cbfe1249"
+  dependencies:
+    fs-extra "^5.0.0"
+    lodash "^4.17.5"
 
 parse-asn1@^5.0.0:
   version "5.1.0"
