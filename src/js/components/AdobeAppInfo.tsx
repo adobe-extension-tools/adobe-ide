@@ -1,32 +1,32 @@
-import * as React from 'react'
-import './AdobeAppInfo.css'
-import { evalExtendscript, getExtensionPath } from 'cep-interface'
-import { id } from '../../shared'
-import { logPath } from '../logger'
+import * as React from "react";
+import "./AdobeAppInfo.css";
+import { evalExtendscript, getExtensionPath } from "cep-interface";
+import { id } from "../../shared";
+import { logPath } from "../logger";
 
 export default class AdobeAppInfo extends React.Component {
   state = {
     id: undefined,
     version: undefined,
     name: undefined,
-    extensionPath: undefined,
-  }
+    extensionPath: undefined
+  };
 
   async componentDidMount() {
-    const info: any = await evalExtendscript(`$.global["${id}"].getInfo()`)
-    const extensionPath = await getExtensionPath()
+    const info: any = await evalExtendscript(`$.global["${id}"].getInfo()`);
+    const extensionPath = await getExtensionPath();
 
     this.setState({
       id: info.id,
       name: info.name,
       version: info.version,
-      extensionPath,
-    })
+      extensionPath
+    });
   }
 
   onClick = async () => {
-    const result = await evalExtendscript(`$.global["${id}"].showAlert()`)
-  }
+    const result = await evalExtendscript(`$.global["${id}"].showAlert()`);
+  };
 
   render() {
     return (
@@ -40,6 +40,6 @@ export default class AdobeAppInfo extends React.Component {
         </ul>
         <button onClick={this.onClick}>Alert from Extendscript</button>
       </div>
-    )
+    );
   }
 }

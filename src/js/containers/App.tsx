@@ -1,14 +1,14 @@
-import * as React from 'react'
+import * as React from "react";
 
-import './App.css'
+import "./App.css";
 
-import AdobeAppInfo from '../components/AdobeAppInfo'
-import { logger } from '../logger'
+import AdobeAppInfo from "../components/AdobeAppInfo";
+import { logger } from "../logger";
 
 export default class App extends React.Component {
   onClick = async () => {
-    logger.info('clicked')
-  }
+    logger.info("clicked");
+  };
 
   render() {
     return (
@@ -17,6 +17,6 @@ export default class App extends React.Component {
         <button onClick={this.onClick}>Log Event</button>
         <AdobeAppInfo />
       </div>
-    )
+    );
   }
 }

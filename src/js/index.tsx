@@ -1,10 +1,10 @@
-import * as React from 'react'
-import * as ReactDOM from 'react-dom'
-import * as path from 'path'
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+import * as path from "path";
 
-import App from './containers/App'
+import App from "./containers/App";
 
-import './index.css'
+import "./index.css";
 
 import {
   inCEPEnvironment,
@@ -12,34 +12,34 @@ import {
   loadExtendscript,
   getExtensionPath,
   getHostEnvironment,
-  RGBColor,
-} from 'cep-interface'
+  RGBColor
+} from "cep-interface";
 
 // node-require
-import os = require('os')
+import os = require("os");
 // node-require
-import fs = require('fs-extra')
+import fs = require("fs-extra");
 
-import { logger } from './logger'
+import { logger } from "./logger";
 
 if (inCEPEnvironment()) {
-  const extensionPath = getExtensionPath()
+  const extensionPath = getExtensionPath();
 
-  const platform = os.platform()
+  const platform = os.platform();
 
-  logger.info('start', extensionPath)
+  logger.info("start", extensionPath);
 
-  const manifest = fs.readJSONSync(path.join(extensionPath, 'manifest.json'))
+  const manifest = fs.readJSONSync(path.join(extensionPath, "manifest.json"));
 
-  loadExtendscript(manifest['index.jsx.ts'])
+  loadExtendscript(manifest["index.jsx.ts"]);
 
-  const host = getHostEnvironment()
+  const host = getHostEnvironment();
   if (host) {
-    const skin = host.appSkinInfo
-    const bgColor = skin.panelBackgroundColor.color as RGBColor
+    const skin = host.appSkinInfo;
+    const bgColor = skin.panelBackgroundColor.color as RGBColor;
     document.body.style.background = `rgb(${bgColor.red}, ${bgColor.green}, ${
       bgColor.blue
-    })`
+    })`;
   }
 
   // const result = fs.readFileSync(
@@ -50,4 +50,4 @@ if (inCEPEnvironment()) {
   // evalExtendscript(`alert("Hello ${Date.now()}");`)
 }
 
-ReactDOM.render(<App />, document.getElementById('root') as HTMLElement)
+ReactDOM.render(<App />, document.getElementById("root") as HTMLElement);

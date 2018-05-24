@@ -1,40 +1,40 @@
 // node-require
-import fs = require('fs-extra')
+import fs = require("fs-extra");
 // node-require
-import os = require('os')
+import os = require("os");
 // node-require
-import path = require('path')
+import path = require("path");
 // node-require
-import pino = require('pino')
+import pino = require("pino");
 
-import { id } from '../shared'
+import { id } from "../shared";
 
 function getLogPath(id: string): string {
-  const homeDir = os.homedir()
-  const file = `${id}.log`
-  const platform = os.platform()
+  const homeDir = os.homedir();
+  const file = `${id}.log`;
+  const platform = os.platform();
 
   switch (platform) {
-    case 'darwin': {
-      return path.join(homeDir, 'Library', 'Logs', file)
+    case "darwin": {
+      return path.join(homeDir, "Library", "Logs", file);
     }
 
-    case 'win32': {
-      return path.join(homeDir, 'AppData', 'Roaming', file)
+    case "win32": {
+      return path.join(homeDir, "AppData", "Roaming", file);
     }
 
-    case 'linux': {
-      return path.join(homeDir, '.logs', file)
+    case "linux": {
+      return path.join(homeDir, ".logs", file);
     }
 
     default:
-      return path.join(homeDir, '.logs', file)
+      return path.join(homeDir, ".logs", file);
   }
 }
 
 export function createLogger(logPath: string) {
-  return pino({}, fs.createWriteStream(logPath, { flags: 'a' }))
+  return pino({}, fs.createWriteStream(logPath, { flags: "a" }));
 }
 
-export const logPath = getLogPath(id)
-export const logger = createLogger(logPath)
+export const logPath = getLogPath(id);
+export const logger = createLogger(logPath);
