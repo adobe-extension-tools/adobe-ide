@@ -5,7 +5,7 @@ Starter template for [parcel-cep-plugin](https://github.com/fusepilot/parcel-plu
 ## Quick Start
 
 ```sh
-git clone git@github.com:fusepilot/parcel-plugin-cep-starter.git
+git clone https://github.com/fusepilot/parcel-plugin-cep-starter.git
 cd parcel-plugin-cep-starter
 yarn
 yarn run start
