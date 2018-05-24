@@ -1,6 +1,6 @@
 # Parcel CEP Plugin Starter
 
-Starter template for [parcel-cep-plugin](https://github.com/fusepilot/parcel-plugin-cep), a zero configuration CEP extension builder.
+Starter template for [parcel-cep-plugin](https://github.com/fusepilot/parcel-plugin-cep), a zero configuration CEP extension builder for [Parcel](https://github.com/parcel-bundler/parcel).
 
 ## Quick Start
 
