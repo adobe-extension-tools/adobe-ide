@@ -2757,9 +2757,12 @@ parcel-bundler@^1.9.1:
     v8-compile-cache "^2.0.0"
     ws "^5.1.1"
 
-"parcel-plugin-cep@link:../parcel-plugin-cep":
-  version "0.0.0"
-  uid ""
+parcel-plugin-cep@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/parcel-plugin-cep/-/parcel-plugin-cep-1.0.0.tgz#9dcf884f057f681cb4a26f58dc3a2406daff4393"
+  dependencies:
+    fs-extra "^5.0.0"
+    lodash "^4.17.5"
 
 parse-asn1@^5.0.0:
   version "5.1.1"
