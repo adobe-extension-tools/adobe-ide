@@ -1,11 +1,11 @@
-// node-require
-import fs = require("fs-extra");
-// node-require
-import os = require("os");
-// node-require
-import path = require("path");
-// node-require
-import pino = require("pino");
+// @ts-ignore
+const fs = window.cep_node.require("fs-extra");
+// @ts-ignore
+const os = window.cep_node.require("os");
+// @ts-ignore
+const path = window.cep_node.require("path");
+// @ts-ignore
+const pino = window.cep_node.require("pino");
 
 import { id } from "../shared";
 

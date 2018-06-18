@@ -18,7 +18,7 @@
     "zxp": "create-zxp ./dist"
   },
   "dependencies": {
-    "fs-extra": "^5.0.0",
+    "fs-extra": "^6.0.1",
     "pino": "^4.16.1"
   },
   "devDependencies": {
@@ -32,7 +32,7 @@
     "concurrently": "^3.5.1",
     "create-zxp": "^0.1.0",
     "parcel-bundler": "^1.9.1",
-    "parcel-plugin-cep": "^1.0.0",
+    "parcel-plugin-cep": "link:../parcel-plugin-cep",
     "cep-interface": "^0.4.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
