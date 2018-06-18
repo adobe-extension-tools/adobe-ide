@@ -1,6 +1,6 @@
 {
   "name": "react-parcel-cep-starter",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "cep": {
     "name": "React Parcel CEP Starter",
     "id": "com.mycompany.myextension",
@@ -31,8 +31,8 @@
     "babel-preset-react": "^6.24.1",
     "concurrently": "^3.5.1",
     "create-zxp": "^0.1.0",
-    "parcel-bundler": "^1.8.1",
-    "parcel-plugin-cep": "^0.0.5",
+    "parcel-bundler": "^1.9.1",
+    "parcel-plugin-cep": "^1.0.0",
     "cep-interface": "^0.4.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
