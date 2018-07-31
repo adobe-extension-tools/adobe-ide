@@ -7,7 +7,6 @@ function showAlert() {
 function getInfo() {
   return JSON.stringify({
     id,
-    // @ts-ignore
     name: app.name,
     version: app.version
   });
