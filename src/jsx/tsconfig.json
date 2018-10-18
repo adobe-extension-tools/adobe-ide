@@ -4,6 +4,7 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "strict": true,
+    "noLib": true,
     "types": ["AfterEffects/2018"],
     "typeRoots": ["../../node_modules/types-for-adobe"]
   },
