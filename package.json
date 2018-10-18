@@ -9,10 +9,13 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "concurrently \"yarn run start-js\" \"yarn run start-jsx\"",
+    "start": "concurrently \"npm run start-jsx\" \"npm run start-js\"",
     "start-js": "parcel src/js/index.html",
-    "start-jsx": "parcel watch src/jsx/index.jsx.ts --no-hmr --no-source-maps",
-    "build": "yarn run build-js && yarn run build-jsx",
+    "start-jsx": "parcel watch src/jsx/index.ts --no-hmr --no-source-maps",
+    "debug": "concurrently \"npm run debug-jsx\" \"npm run debug-js\"",
+    "debug-js": "parcel --log-level 4 src/js/index.html",
+    "debug-jsx": "parcel watch src/jsx/index.ts --no-hmr --no-source-maps --log-level 4",
+    "build": "npm run build-js && npm run build-jsx",
     "build-js": "parcel build src/js/index.html --public-url .",
     "build-jsx": "parcel build src/jsx/index.jsx.ts",
     "zxp": "create-zxp ./dist"
@@ -26,17 +29,19 @@
     "@types/pino": "^4.16.0",
     "@types/react": "^16.3.14",
     "@types/react-dom": "^16.0.5",
+    "babel-core": "^6.26.3",
     "babel-preset-cep": "^0.0.3",
     "babel-preset-extendscript": "^0.1.1",
     "babel-preset-react": "^6.24.1",
+    "cep-interface": "^0.4.2",
     "concurrently": "^3.5.1",
     "create-zxp": "^0.1.0",
+    "extendscript-es5-shim-ts": "0.0.1",
     "parcel-bundler": "^1.9.1",
     "parcel-plugin-cep": "1.1.0",
-    "cep-interface": "^0.4.2",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
-    "types-for-adobe": "pravdomil/types-for-adobe",
+    "types-for-adobe": "github:pravdomil/types-for-adobe",
     "typescript": "^2.8.3"
   }
 }
