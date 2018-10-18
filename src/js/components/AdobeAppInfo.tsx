@@ -1,5 +1,7 @@
-import * as React from "react";
-import { id } from "../../shared";
+import { evalExtendscript, getExtensionPath, inCEPEnvironment } from 'cep-interface'
+import * as React from 'react'
+
+import { id } from '../../shared'
 
 export default class AdobeAppInfo extends React.Component {
   state = {
@@ -8,17 +10,11 @@ export default class AdobeAppInfo extends React.Component {
     name: undefined,
     extensionPath: undefined,
     isInCEPEnvironment: false
-  };
+  }
 
   async componentDidMount() {
-    const {
-      inCEPEnvironment,
-      evalExtendscript,
-      getExtensionPath
-    } = await import("cep-interface");
-
     if (inCEPEnvironment()) {
-      const info: any = await evalExtendscript(`$.global["${id}"].getInfo()`);
+      const info: any = await evalExtendscript(`$.global["${id}"].getInfo()`)
       const extensionPath = await getExtensionPath();
       this.setState({
         id: info.id,
@@ -26,7 +22,7 @@ export default class AdobeAppInfo extends React.Component {
         version: info.version,
         extensionPath,
         isInCEPEnvironment: true
-      });
+      })
     }
   }
 
@@ -42,6 +38,6 @@ export default class AdobeAppInfo extends React.Component {
           <li>Extension Path: {this.state.extensionPath}</li>
         </ul>
       </div>
-    );
+    )
   }
 }

@@ -1,10 +1,9 @@
-import * as React from "react";
+import './App.css'
 
-import "./App.css";
+import * as React from 'react'
 
-import AdobeAppInfo from "../components/AdobeAppInfo";
-import LogInfo from "../components/LogInfo";
-import { logger } from "../logger";
+import AdobeAppInfo from '../components/AdobeAppInfo'
+import LogInfo from '../components/LogInfo'
 
 export default class App extends React.Component {
   render() {
