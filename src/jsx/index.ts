@@ -11,7 +11,8 @@ console.log('Log from ExtendScript')
 console.warn('Warning from ExtendScript')
 console.error('Error from ExtendScript')
 console.log({
-  object: 'from ExtendScript'
+  object: 'from ExtendScript',
+  bundleName: process.env.BUNDLE_NAME
 })
 
 function getInfo() {

@@ -9,30 +9,8 @@ import * as React from 'react'
 
 import { id } from '../../shared'
 
-function parseHosts(hostsString) {
-  if (hostsString == '*')
-    hostsString = `PHXS, IDSN, AICY, ILST, PPRO, PRLD, AEFT, FLPR, AUDT, DRWV, MUST, KBRG`
-  const hosts = hostsString
-    .split(/(?![^)(]*\([^)(]*?\)\)),(?![^\[]*\])/)
-    .map(host => host.trim())
-    .map(host => {
-      let [name, version] = host.split('@')
-      if (version == '*' || !version) {
-        version = '[0.0,99.9]'
-      } else if (version) {
-        version = version
-      }
-      return {
-        name,
-        version,
-      }
-    })
-  return hosts
-}
-
-const hostNames = parseHosts(process.env.HOSTS).map((host) => host.name)
-const index = hostNames.indexOf(getApplicationID())
-const debugPort = 3001 + index
+const debugPorts = JSON.parse(process.env.DEBUG_PORTS)
+const debugPort = debugPorts[getApplicationID()]
 
 export default class AdobeAppInfo extends React.Component {
   state = {
