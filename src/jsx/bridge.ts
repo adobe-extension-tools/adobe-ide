@@ -1,3 +1,5 @@
+/// <reference path="../../node_modules/types-for-adobe/shared/PlugPlugExternalObject.ts" />
+
 let xLib: ExternalObject | undefined
 try {
   xLib = new ExternalObject("lib:\PlugPlugExternalObject")
