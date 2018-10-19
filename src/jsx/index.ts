@@ -1,4 +1,3 @@
-/// <reference path="../../node_modules/types-for-adobe/shared/PlugPlugExternalObject.ts" />
 import 'extendscript-es5-shim-ts'
 
 import { id } from '../shared'
