@@ -1,7 +1,38 @@
-import { evalExtendscript, getExtensionPath, inCEPEnvironment } from 'cep-interface'
+import {
+  evalExtendscript,
+  getApplicationID,
+  getExtensionPath,
+  inCEPEnvironment,
+  openURLInDefaultBrowser,
+} from 'cep-interface'
 import * as React from 'react'
 
 import { id } from '../../shared'
+
+function parseHosts(hostsString) {
+  if (hostsString == '*')
+    hostsString = `PHXS, IDSN, AICY, ILST, PPRO, PRLD, AEFT, FLPR, AUDT, DRWV, MUST, KBRG`
+  const hosts = hostsString
+    .split(/(?![^)(]*\([^)(]*?\)\)),(?![^\[]*\])/)
+    .map(host => host.trim())
+    .map(host => {
+      let [name, version] = host.split('@')
+      if (version == '*' || !version) {
+        version = '[0.0,99.9]'
+      } else if (version) {
+        version = version
+      }
+      return {
+        name,
+        version,
+      }
+    })
+  return hosts
+}
+
+const hostNames = parseHosts(process.env.HOSTS).map((host) => host.name)
+const index = hostNames.indexOf(getApplicationID())
+const debugPort = 3001 + index
 
 export default class AdobeAppInfo extends React.Component {
   state = {
@@ -37,6 +68,7 @@ export default class AdobeAppInfo extends React.Component {
           <li>Version: {this.state.version}</li>
           <li>Extension Path: {this.state.extensionPath}</li>
         </ul>
+        <button onClick={() => openURLInDefaultBrowser(`http://localhost:${debugPort}`)}>Open debugger</button>
       </div>
     )
   }
