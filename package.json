@@ -15,7 +15,7 @@
     "debug": "npm-run-all --parallel debug-jsx debug-js",
     "debug-js": "parcel --log-level 4 src/js/index.html",
     "debug-jsx": "parcel watch src/jsx/index.ts --no-hmr --no-source-maps --log-level 4",
-    "build": "npm-run-all clean build-js build-jsx",
+    "build": "npm-run-all clean build-jsx build-js",
     "build-js": "parcel build src/js/index.html --public-url .",
     "build-jsx": "parcel build src/jsx/index.ts",
     "clean": "rimraf ./dist",
