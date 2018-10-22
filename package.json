@@ -9,7 +9,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "npm-run-all --parallel start-jsx start-js",
+    "start": "npm-run-all --serial clean build-jsx --parallel start-jsx start-js",
     "start-js": "parcel src/js/index.html",
     "start-jsx": "parcel watch src/jsx/index.ts --no-hmr --no-source-maps",
     "debug": "npm-run-all --parallel debug-jsx debug-js",
