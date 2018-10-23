@@ -25,6 +25,7 @@ export default class AdobeAppInfo extends React.Component {
 
   render() {
     const { info, extensionPath } = this.state
+    if (!info) return null
     return (
       <div className="AdobeAppInfo">
         <h3>Adobe App Info</h3>
