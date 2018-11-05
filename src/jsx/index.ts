@@ -1,7 +1,14 @@
 import 'extendscript-es5-shim-ts'
 
-import { id } from '../shared'
 import console from './console'
+
+interface Process {
+  env: {
+    [key: string]: string | undefined
+  }
+}
+
+declare const process: Process
 
 function showAlert() {
   alert(`Alert from Extendscript.\n${new Date().toString()}`);
@@ -17,13 +24,11 @@ console.log({
 
 function getInfo() {
   return JSON.stringify({
-    id,
-    name: app.name,
     version: app.version
   });
 }
 
-$.global[id] = {
+$.global[process.env.BUNDLE_ID!] = {
   showAlert,
   getInfo
 };

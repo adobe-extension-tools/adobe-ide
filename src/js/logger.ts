@@ -1,9 +1,7 @@
-import { id } from '../shared'
-
-const fs = window.cep_node.require("fs-extra")
-const os = window.cep_node.require("os")
-const path = window.cep_node.require("path")
-const pino = window.cep_node.require("pino")
+const fs = global.cep_node.require("fs-extra")
+const os = global.cep_node.require("os")
+const path = global.cep_node.require("path")
+const pino = global.cep_node.require("pino")
 
 function getLogPath(id: string): string {
   const homeDir = os.homedir()
@@ -29,5 +27,5 @@ export function createLogger(logPath: string) {
   return pino({}, fs.createWriteStream(logPath, { flags: "a" }))
 }
 
-export const logPath = getLogPath(id)
+export const logPath = getLogPath(process.env.BUNDLE_ID)
 export const logger = createLogger(logPath)

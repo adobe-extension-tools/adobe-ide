@@ -4,13 +4,13 @@ import { logger, logPath } from '../logger'
 
 export default class LogInfo extends React.Component {
   onLog = async (level: string) => {
-    logger[level]("log")
+    logger[level]('log')
   }
 
   openLog = async () => {
-    const child = window.cep_node.require("child_process")
-    if (process.platform === "darwin") {
-      child.spawn("open", [logPath])
+    const child = global.cep_node.require('child_process')
+    if (process.platform === 'darwin') {
+      child.spawn('open', [logPath])
     }
   }
 

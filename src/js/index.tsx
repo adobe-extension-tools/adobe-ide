@@ -1,3 +1,4 @@
+/// <reference path="index.d.ts" />
 import './console'
 import './extendscript'
 import './index.css'
