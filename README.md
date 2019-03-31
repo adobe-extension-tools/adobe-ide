@@ -15,7 +15,8 @@ And this project itself is made using (my fork of) the `parcel-plugin-cep-starte
 
 ## Installing
 
-I'll be uploading installers soon, I will integrate the builds in travis ci.
+Releases are here: https://github.com/adobe-extension-tools/adobe-ide/releases
+They are un-signed at the moment, so for now on macOS you have to right-click -> open the installer file.
 
 ## Developing this extension
 
