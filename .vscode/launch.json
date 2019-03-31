@@ -5,6 +5,14 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "extendscript-debug",
+            "request": "launch",
+            "engineName": "main",
+            "name": "Debug ExtendScript",
+            "program": "${workspaceFolder}/dist/index.js",
+            "stopOnEntry": true
+        },
+        {
             "name": "Debug CEP Extension",
             "type": "chrome",
             "request": "attach",
@@ -13,4 +21,4 @@
             "webRoot": "${workspaceRoot}/src"
         }
     ]
-}
+}%
