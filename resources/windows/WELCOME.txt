@@ -1,0 +1,3 @@
+Install Adobe IDE
+
+After installation, restart the Adobe program and find the extension under Window -> Extensions.
