@@ -2,11 +2,13 @@ os:
   - osx
 
 language: node_js
+
 node_js:
   - "10"
 
 before_install:
   - npm i -g npm@6.4.1
+  - brew install makensis
 
 script:
     npm run build-installers
