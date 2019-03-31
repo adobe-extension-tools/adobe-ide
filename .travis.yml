@@ -4,7 +4,6 @@ language: node_js
 node_js:
 - '10'
 before_install:
-- npm i -g npm@6.4.1
 - brew install makensis
 script: npm run build-installers
 deploy:
@@ -14,5 +13,7 @@ deploy:
   file: 
     - archive/adobe-ide-0.0.1.exe
     - archive/adobe-ide-0.0.1.pkg
-  on:
-    repo: adobe-extension-tools/adobe-ide
+  skip_cleanup: true
+  draft: true
+  # on:
+  #   tags: true
