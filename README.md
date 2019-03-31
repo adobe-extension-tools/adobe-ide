@@ -1,12 +1,27 @@
-# Parcel CEP Plugin Starter
+# Adobe IDE
 
-Starter template for [parcel-cep-plugin](https://github.com/fusepilot/parcel-plugin-cep), a zero configuration CEP extension builder for [Parcel](https://github.com/parcel-bundler/parcel).
+This is a CEP extension for Adobe software to write ExtendScript code, run it, and log to a console inside the extension.
 
-## Quick Start
+It features:
+- Syntax highlighting
+- Auto completion for the Adobe API's
+- Type checking using TypeScript (this is opt-in)
+- Modern JavaScript (ES6) / TypeScript to ExtendScript compiler
+
+This code editor is built on top of `monaco-editor`, which is a code editor for the browser, based on Visual Studio Code's editor.
+It also comes with a TypeScript compiler and support for parsing TypeScript code and providing auto completion.
+To get the autocompletion we use the typings from `types-for-adobe` by @pravdovmil
+And this project itself is made using (my fork of) the `parcel-plugin-cep-starter` by @fusepilot.
+
+## Installing
+
+I'll be uploading installers soon, I will integrate the builds in travis ci.
+
+## Developing this extension
 
 ```sh
-git clone https://github.com/fusepilot/parcel-plugin-cep-starter.git
-cd parcel-plugin-cep-starter
+git clone https://github.com/adobe-extension-tools/adobeide.git
+cd adobeide
 npm
 npm run start
 ```
@@ -26,7 +41,15 @@ npm run build
 To create a .zxp for deployment:
 
 ```sh
-npm run zxp
+npm run build-zxp
 ```
 
-A versioned .zxp file will be placed inside `archive`.
+(A versioned .zxp file will be placed inside `archive`.)
+
+To create a installers for macOS and Windows:
+
+```sh
+npm run build-installers
+```
+
+(A versioned .pkg and .exe file will be placed inside `archive`.)

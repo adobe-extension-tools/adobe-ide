@@ -1,9 +1,9 @@
 {
-  "name": "react-parcel-cep-starter",
-  "version": "1.0.0",
+  "name": "adobe-ide",
+  "version": "0.0.1",
   "cep": {
-    "name": "React Parcel CEP Starter",
-    "id": "com.mycompany.myextension",
+    "name": "Adobe IDE",
+    "id": "com.aet.adobeide",
     "hosts": "*"
   },
   "main": "index.js",
