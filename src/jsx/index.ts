@@ -32,3 +32,15 @@ $.global[process.env.BUNDLE_ID!] = {
   showAlert,
   getInfo
 };
+
+const originalWrite = $.write
+const originalWriteln = $.writeln
+$.write = (...args) => {
+  console.log(...args)
+  // originalWrite(...args)
+}
+
+$.writeln = (...args) => {
+  console.log(...args)
+  // originalWriteln(...args)
+}
