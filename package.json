@@ -4,7 +4,8 @@
   "cep": {
     "name": "Adobe IDE",
     "id": "com.aet.adobeide",
-    "hosts": "*"
+    "hosts": "*",
+    "debugInProduction": true
   },
   "main": "index.js",
   "license": "MIT",
@@ -43,7 +44,7 @@
     "babel-preset-extendscript": "^0.1.1",
     "babel-preset-react": "^6.24.1",
     "cep-interface": "^0.4.2",
-    "cep-packager": "0.0.23",
+    "cep-packager": "0.0.24",
     "console-feed": "^2.8.6",
     "create-zxp": "^0.1.0",
     "extendscript-es5-shim-ts": "0.0.1",
