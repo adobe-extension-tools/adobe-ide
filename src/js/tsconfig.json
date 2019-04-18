@@ -1,13 +1,10 @@
 {
   "compilerOptions": {
-    "jsx": "react",
-    "target": "es5",
+    "outDir": "../dist/js",
+    "noImplicitAny": true,
     "module": "commonjs",
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "inlineSources": true,
-    "sourceRoot": "",
-    "lib": ["es2015", "dom"]
-  },
-  "include": ["./**/*"]
+    "target": "es5",
+    "jsx": "react",
+    "allowJs": true
+  }
 }

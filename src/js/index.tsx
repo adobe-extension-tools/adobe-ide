@@ -8,4 +8,25 @@ import * as ReactDOM from 'react-dom'
 
 import App from './containers/App'
 
-ReactDOM.render(<App />, document.getElementById("root") as HTMLElement)
+function getRootEl() {
+  let rootEl = document.getElementById("root") as HTMLElement
+  if (!rootEl) {
+    rootEl = document.createElement('div')
+    rootEl.style.width = '100%'
+    rootEl.style.height = '100%'
+    document.body.appendChild(rootEl)
+  }
+  return rootEl
+}
+
+ReactDOM.render(<App />, getRootEl())
+
+declare global {
+  interface NodeModule {
+    hot: any
+  }
+}
+
+if (module.hot) {
+  module.hot.accept(() => { })
+}

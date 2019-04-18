@@ -1,53 +1,13 @@
 import './App.css'
 import * as React from 'react'
-import 'monaco-editor/esm/vs/editor/browser/controller/coreCommands.js'
-import 'monaco-editor/esm/vs/editor/contrib/find/findController.js'
-import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js'
-import 'monaco-editor/esm/vs/basic-languages/typescript/typescript.contribution'
-import 'monaco-editor/esm/vs/language/json/monaco.contribution'
-import 'monaco-editor/esm/vs/language/typescript/monaco.contribution'
-import 'monaco-editor/esm/vs/editor/browser/widget/codeEditorWidget.js';
-import 'monaco-editor/esm/vs/editor/contrib/bracketMatching/bracketMatching.js';
-import 'monaco-editor/esm/vs/editor/contrib/caretOperations/caretOperations.js';
-import 'monaco-editor/esm/vs/editor/contrib/caretOperations/transpose.js';
-import 'monaco-editor/esm/vs/editor/contrib/clipboard/clipboard.js';
-import 'monaco-editor/esm/vs/editor/contrib/codelens/codelensController.js';
-import 'monaco-editor/esm/vs/editor/contrib/colorPicker/colorDetector.js';
-import 'monaco-editor/esm/vs/editor/contrib/comment/comment.js';
-import 'monaco-editor/esm/vs/editor/contrib/contextmenu/contextmenu.js';
-import 'monaco-editor/esm/vs/editor/contrib/cursorUndo/cursorUndo.js';
-import 'monaco-editor/esm/vs/editor/contrib/dnd/dnd.js';
-import 'monaco-editor/esm/vs/editor/contrib/folding/folding.js';
-import 'monaco-editor/esm/vs/editor/contrib/format/formatActions.js';
-import 'monaco-editor/esm/vs/editor/contrib/hover/hover.js';
-import 'monaco-editor/esm/vs/editor/contrib/inPlaceReplace/inPlaceReplace.js';
-import 'monaco-editor/esm/vs/editor/contrib/linesOperations/linesOperations.js';
-import 'monaco-editor/esm/vs/editor/contrib/links/links.js';
-import 'monaco-editor/esm/vs/editor/contrib/multicursor/multicursor.js';
-import 'monaco-editor/esm/vs/editor/contrib/parameterHints/parameterHints.js';
-import 'monaco-editor/esm/vs/editor/contrib/referenceSearch/referenceSearch.js';
-import 'monaco-editor/esm/vs/editor/contrib/rename/rename.js';
-import 'monaco-editor/esm/vs/editor/contrib/smartSelect/smartSelect.js';
-import 'monaco-editor/esm/vs/editor/contrib/snippet/snippetController2.js';
-import 'monaco-editor/esm/vs/editor/contrib/suggest/suggestController.js';
-import 'monaco-editor/esm/vs/editor/contrib/toggleTabFocusMode/toggleTabFocusMode.js';
-import 'monaco-editor/esm/vs/editor/contrib/wordHighlighter/wordHighlighter.js';
-import 'monaco-editor/esm/vs/editor/contrib/wordOperations/wordOperations.js';
-import 'monaco-editor/esm/vs/editor/standalone/browser/accessibilityHelp/accessibilityHelp.js';
-import 'monaco-editor/esm/vs/editor/standalone/browser/inspectTokens/inspectTokens.js';
-import 'monaco-editor/esm/vs/editor/standalone/browser/iPadShowKeyboard/iPadShowKeyboard.js';
-import 'monaco-editor/esm/vs/editor/standalone/browser/quickOpen/quickOutline.js';
-import 'monaco-editor/esm/vs/editor/standalone/browser/quickOpen/gotoLine.js';
-import 'monaco-editor/esm/vs/editor/standalone/browser/quickOpen/quickCommand.js';
-import 'monaco-editor/esm/vs/editor/standalone/browser/toggleHighContrast/toggleHighContrast.js';
-import 'monaco-editor/esm/vs/basic-languages/javascript/javascript.contribution';
+import * as monaco from 'monaco-editor/esm/vs/editor/editor.api';
 import {
   evalExtendscript,
   registerKeyEventsInterest,
   addEventListener
 } from 'cep-interface'
 import RunIcon from '../icons/RunIcon';
-import { Hook, Console, Decode } from 'console-feed'
+import { Console } from 'console-feed'
 
 function safeRun(code: string) {
   const safeCode = `(function () {
@@ -89,25 +49,23 @@ function safeRun(code: string) {
     })
 }
 
-const fs = require('fs')
-
 export default class App extends React.Component {
   public containerRef = React.createRef<HTMLDivElement>()
 
   state = {
     showConsole: true,
     command: '',
-    console: []
+    console: [] as any[]
   }
 
-  constructor(props) {
+  constructor(props: any) {
     super(props)
     this.evalCode = this.evalCode.bind(this)
   }
 
   componentDidMount() {
     // add console.log event listener
-    addEventListener('CONSOLE_LOG', (e) => {
+    addEventListener('CONSOLE_LOG', (e: any) => {
       this.setState({
         console: [...this.state.console, e.data]
       })
@@ -125,34 +83,19 @@ export default class App extends React.Component {
     //   ]
     // ))
     // console.log('registerKey result', registerKey)
-    // @ts-ignore
-    window.MonacoEnvironment = {
-      getWorker: function (moduleId, label) {
-        if (label === 'json') {
-          return new Worker('../../../node_modules/monaco-editor/esm/vs/language/json/json.worker.js')
-        }
-        if (label === 'css') {
-          return new Worker('../../../node_modules/monaco-editor/esm/vs/language/css/css.worker.js')
-        }
-        if (label === 'html') {
-          return new Worker('../../../node_modules/monaco-editor/esm/vs/language/html/html.worker.js')
-        }
-        if (label === 'typescript' || label === 'javascript') {
-          return new Worker('../../../node_modules/monaco-editor/esm/vs/language/typescript/ts.worker.js')
-        }
-        return new Worker('../../../node_modules/monaco-editor/esm/vs/editor/editor.worker.js')
-      }
-    }
+    const globalTypes = require('!!raw-loader!../../../node_modules/types-for-adobe/shared/global.d.ts')
     monaco.languages.typescript.typescriptDefaults.addExtraLib(
-      fs.readFileSync('node_modules/types-for-adobe/shared/global.d.ts', 'utf8'),
+      globalTypes.default,
       'global.d.ts'
     )
+    const scriptUiTypes = require('!!raw-loader!../../../node_modules/types-for-adobe/shared/ScriptUI.d.ts')
     monaco.languages.typescript.typescriptDefaults.addExtraLib(
-      fs.readFileSync('node_modules/types-for-adobe/shared/ScriptUI.d.ts', 'utf8'),
+      scriptUiTypes.default,
       'ScriptUI.d.ts'
     )
+    const afterEffectsTypes = require('!!raw-loader!../../../node_modules/types-for-adobe/AfterEffects/2018/index.d.ts')
     monaco.languages.typescript.typescriptDefaults.addExtraLib(
-      fs.readFileSync('node_modules/types-for-adobe/AfterEffects/2018/index.d.ts', 'utf8'),
+      afterEffectsTypes.default,
       'AfterEffects.d.ts'
     )
     monaco.languages.typescript.typescriptDefaults.setCompilerOptions({
@@ -161,14 +104,10 @@ export default class App extends React.Component {
       allowNonTsExtensions: true
     })
     const model = monaco.editor.createModel(
-      `console.log(typeof app.project.activeItem)`,
+      `console.log(app.project.activeItem.name)`,
       'typescript',
       monaco.Uri.parse('file:///index.ts')
     );
-
-    window.monaco = monaco;
-    window.model = model;
-
     monaco.editor.create(this.containerRef.current, {
       automaticLayout: true,
       language: 'typescript',
@@ -177,20 +116,14 @@ export default class App extends React.Component {
       acceptSuggestionOnCommitCharacter: true,
       model: model
     });
-
-    // var quickCommandAction = model.getAction("editor.action.quickCommand");
-    // model.addCommand(monaco.KeyCode.F1, quickCommandAction._run);
-    console.log(monaco)
-    console.log(model)
-    // editor._standaloneKeybindingService._getResolver()._lookupMap.get("editor.action.quickCommand")[0].resolvedKeybinding._firstPart.keyCode = monaco.KeyCode.F2; editor._standaloneKeybindingService.updateResolver();
   }
 
   evalCode() {
     monaco.languages.typescript.getTypeScriptWorker()
       .then(function (worker) {
         worker('file:///index.ts')
-          .then(function (client) {
-            client.getEmitOutput('file:///index.ts').then(function (r) {
+          .then(function (client: any) {
+            client.getEmitOutput('file:///index.ts').then(function (r: any) {
               const src = r.outputFiles[0].text
               console.log(src);
               safeRun(src)
@@ -250,11 +183,3 @@ export default class App extends React.Component {
     );
   }
 }
-
-// { this.state.console.map((line, i) => {
-//   return line.map(arg => (
-//     <pre key={i + JSON.stringify(line)} style={{ color: 'white' }}>
-//       {JSON.stringify(arg)}
-//     </pre>
-//   ))
-// }) }

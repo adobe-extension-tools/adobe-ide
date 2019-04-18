@@ -1,12 +1,22 @@
 {
   "compilerOptions": {
-    "target": "es3",
-    "module": "commonjs",
-    "moduleResolution": "node",
+    "outDir": "../dist/jsx",
+    "noImplicitAny": true,
+    "target": "es5",
+    "allowJs": true,
     "strict": true,
     "noLib": true,
-    "types": ["AfterEffects/2018"],
-    "typeRoots": ["../../node_modules/types-for-adobe"]
+    "types": [
+      "AfterEffects/2018"
+    ],
+    "typeRoots": [
+      "../../node_modules/types-for-adobe"
+    ]
   },
-  "include": ["./**/*"]
+  "include": [
+    "./**/*",
+    "../../node_modules/types-for-adobe/shared/PlugPlugExternalObject.ts",
+    "../../node_modules/extendscript-es5-shim-ts/index.d.ts"
+  ],
+  "exclude": []
 }
