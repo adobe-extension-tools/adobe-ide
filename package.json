@@ -14,7 +14,7 @@
     "watch:cep": "webpack-dev-server --config cep.config.js",
     "start": "npm-run-all --parallel watch:**",
     "build:extendscript": "webpack --config extendscript.config.js --display verbose",
-    "build:jsxbin": "node ./vendor/exportToJSX.js -n ./dist/extendscript.js",
+    "build:jsxbin": "node ./vendor/exportToJSX.js -n ./dist/extendscript.js || true",
     "build:cep": "webpack --config cep.config.js --display verbose",
     "build": "npm-run-all --serial build:**",
     "zxp": "create-zxp ./dist",
