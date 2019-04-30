@@ -1,4 +1,3 @@
-import 'extendscript-es5-shim-ts'
 import console from './console'
 
 $.write = (...args) => {

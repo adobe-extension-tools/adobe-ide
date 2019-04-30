@@ -1,6 +1,6 @@
 {
   "name": "adobe-ide",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "cep": {
     "name": "Adobe IDE",
     "id": "com.aet.adobeide",
@@ -12,11 +12,14 @@
   "scripts": {
     "watch:extendscript": "webpack --config extendscript.config.js --watch",
     "watch:cep": "webpack-dev-server --config cep.config.js",
-    "start": "npm-run-all --parallel watch:**",
+    "start": "export IS_DEV=1 && npm-run-all --parallel watch:**",
     "build:extendscript": "webpack --config extendscript.config.js --display verbose",
     "build:jsxbin": "node ./vendor/exportToJSX.js -n ./dist/extendscript.js || true",
-    "build:cep": "webpack --config cep.config.js --display verbose",
+    "build:cep": "webpack --config cep.config.js --display verbose && rm dist/extendscript.js",
     "build": "npm-run-all --serial build:**",
+    "ci:extendscript": "webpack --config extendscript.config.js --display verbose",
+    "ci:cep": "webpack --config cep.config.js --display verbose",
+    "ci": "export IS_DEV=1 && npm-run-all --serial ci:** installers",
     "zxp": "create-zxp ./dist",
     "installers": "cep-packager ./dist",
     "build-zxp": "npm-run-all build zxp",

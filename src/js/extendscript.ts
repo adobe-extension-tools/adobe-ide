@@ -22,7 +22,7 @@ function setAppTheme() {
 setAppTheme()
 addEventListener(THEME_COLOR_CHANGED_EVENT, setAppTheme)
 
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.IS_DEV) {
   const bundle = require('!!raw-loader!../../dist/extendscript.js')
   evalExtendscript(bundle.default)
 } else {

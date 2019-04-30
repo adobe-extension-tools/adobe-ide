@@ -1,4 +1,4 @@
-node_modules/
+/node_modules/
 archive/
 .cache/
 dist/
