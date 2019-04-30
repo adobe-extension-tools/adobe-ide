@@ -11,7 +11,7 @@ It features:
 This code editor is built on top of `monaco-editor`, which is a code editor for the browser, based on Visual Studio Code's editor.
 It also comes with a TypeScript compiler and support for parsing TypeScript code and providing auto completion.
 To get the autocompletion we use the typings from `types-for-adobe` by @pravdovmil
-And this project itself is made using (my fork of) the `parcel-plugin-cep-starter` by @fusepilot.
+And this project itself is made using `cep-bundler-webpack`
 
 ## Installing
 
@@ -23,8 +23,8 @@ They are un-signed at the moment, so for now on macOS you have to right-click ->
 ```sh
 git clone https://github.com/adobe-extension-tools/adobeide.git
 cd adobeide
-npm
-npm run start
+npm install
+npm start
 ```
 
 Open your CC app of choice, find your extension under `Window` > `Extensions`, and start developing.
