@@ -7,6 +7,36 @@ import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 
 import App from './containers/App'
+import { registerKeyEventsInterest } from 'cep-interface'
+
+document.addEventListener('keydown', function (e) {
+    console.log(e);
+})
+
+function keyRegisterOverride() {
+    var os = navigator.platform.substr(0, 3);
+    if (os === 'Mac')
+        var maxKey = 126; // Mac Key Codes   
+    else if (os === 'Win')
+        var maxKey = 222; // HTML Key Codes
+    var allKeys = [];
+    for (var k = 0; k <= maxKey; k++) {
+        for (var j = 0; j <= 15; j++) {
+            var guide = (j >>> 0).toString(2).padStart(4, '0');
+            allKeys.push({
+                keyCode: k,
+                ctrlKey: guide[0] == 1,
+                altKey: guide[1] == 1,
+                shiftKey: guide[2] == 1,
+                metaKey: guide[3] == 1
+            });
+        }
+    }
+    console.log(allKeys);
+    var keyRes = registerKeyEventsInterest(JSON.stringify(allKeys));
+    console.log("Key Events Registered Completed: " + keyRes);
+}
+keyRegisterOverride();
 
 function getRootEl() {
   let rootEl = document.getElementById("root") as HTMLElement
