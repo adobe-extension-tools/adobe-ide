@@ -14,6 +14,7 @@ deploy:
     - archive/adobe-ide-*.exe
     - archive/adobe-ide-*.pkg
   skip_cleanup: true
+  file_glob: true
   draft: true
   # on:
   #   tags: true
