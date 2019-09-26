@@ -18,7 +18,7 @@
     "build:cep": "webpack --config cep.config.js --display verbose && rm dist/extendscript.js",
     "build": "npm-run-all --serial build:**",
     "installer:package": "cep-packager ./dist",
-    "installer:notarize": "node tools/notarize.js",
+    "installer:notarize": "node scripts/notarize.js",
     "installer": "npm-run-all --serial build installer:**"
   },
   "dependencies": {
