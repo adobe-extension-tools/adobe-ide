@@ -18,6 +18,6 @@ docker run --rm \
   -e DRONE_COMMIT_REF=refs/heads/master \
   -e PLUGIN_API_KEY=${GITHUB_API_KEY} \
   -e PLUGIN_FILES=master \
-  -v $(pwd):$(pwd) \
-  -w $(pwd) \
+  -v ./archive:/data \
+  -w /data \
   plugins/github-release
