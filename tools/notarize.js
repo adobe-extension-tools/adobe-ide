@@ -15,7 +15,8 @@ const interval = setInterval(() => {
     if (response.indexOf('Package Approved') > -1) {
         clearInterval(interval)
         console.log('Package is approved! Stapling the ticket...')
-        execSync(`xcrun stapler staple "${file}"`)
+        const result = execSync(`xcrun stapler staple "${file}"`).toString()
+        console.log(result)
     } else {
         console.log('Not approved yet...')
     }
