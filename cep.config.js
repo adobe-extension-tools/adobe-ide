@@ -17,5 +17,4 @@ config.plugins.push(new MonacoWebpackPlugin({
 config.mode = process.env.IS_DEV ? 'development' : 'production'
 // config.plugins = config.plugins.filter(p => !(p instanceof WrapperPlugin))
 
-console.log(config)
 module.exports = config
