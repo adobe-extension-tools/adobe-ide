@@ -19,7 +19,7 @@
     "build": "npm-run-all --serial build:**",
     "installer:package": "cep-packager ./dist",
     "installer:notarize": "node tools/notarize.js",
-    "installer": "npm-run-all --serial installers:**",
+    "installer": "npm-run-all --serial installers:**"
   },
   "dependencies": {
     "fs-extra": "^6.0.1"
