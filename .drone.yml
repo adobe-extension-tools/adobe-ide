@@ -1,0 +1,15 @@
+---
+kind: pipeline
+type: exec
+name: default
+
+platform:
+  os: darwin
+  arch: amd64
+
+steps:
+- name: greeting
+  commands:
+  - echo hello world
+  - ls /
+  - pwd
