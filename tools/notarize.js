@@ -19,7 +19,8 @@ const interval = setInterval(() => {
             const result = execSync(`xcrun stapler staple "${file}"`).toString()
             console.log(result)
         } catch (err) {
-            console.error(err)
+            console.error(err.stderr.toString())
+            console.error(err.stdout.toString())
         }
     } else {
         console.log('Not approved yet...')

@@ -17,3 +17,56 @@ steps:
       from_secret: CEP_NOTARIZE_APP_PASSWORD
   commands:
     - ./ci.sh
+
+
+kind: pipeline
+type: exec
+name: build-installers
+
+platform:
+  os: darwin
+  arch: amd64
+
+steps:
+- name: build
+  environment:
+    CEP_ID: com.aedt.adobe-ide
+    CEP_NOTARIZE_USERNAME:
+      from_secret: CEP_NOTARIZE_USERNAME
+    CEP_NOTARIZE_APP_PASSWORD:
+      from_secret: CEP_NOTARIZE_APP_PASSWORD
+  commands:
+    - ./ci.sh
+
+---
+kind: pipeline
+name: github-release
+
+platform:
+  os: darwin
+  arch: amd64
+
+steps:
+- name: publish
+  image: plugins/github-release
+  settings:
+    api_key:
+      from_secret: GITHUB_API_KEY
+    files: archive/*
+  when:
+    event: tag
+
+# ---
+# kind: pipeline
+# name: after
+
+# steps:
+# - name: notify
+#   image: plugins/slack
+#   settings:
+#     room: general
+#     webhook: https://...
+
+# depends_on:
+# - build-installers
+# - github-release
