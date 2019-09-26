@@ -10,6 +10,5 @@ platform:
 steps:
 - name: greeting
   commands:
-  - echo hello world
-  - ls /
-  - pwd
+  - npm install
+  - npm run build-installers
