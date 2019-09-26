@@ -8,6 +8,9 @@ module.exports = {
     bundleId: bundleId,
     version: version,
     src: './dist',
+    paths: {
+      cwd: __dirname + '/work'
+    },
     zxp: {
       dest: `${__dirname}/archive/adobe-ide.zxp`
     },
