@@ -10,6 +10,7 @@ nvm use 10
 npm install
 npm run installer
 
+eval $(docker-machine env default)
 docker run --rm \
   -e DRONE_BUILD_EVENT=tag \
   -e DRONE_REPO_OWNER=adobe-extension-tools \
