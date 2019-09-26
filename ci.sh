@@ -7,4 +7,4 @@ export NVM_DIR="$HOME/.nvm"
 
 nvm use 10
 npm install
-npm run build-installers
+npm run installer

@@ -3,7 +3,7 @@
   "version": "0.0.3",
   "cep": {
     "name": "Adobe IDE",
-    "id": "com.aet.adobeide",
+    "id": "com.aedt.adobe-ide",
     "hosts": "*",
     "debugInProduction": true
   },
@@ -17,13 +17,9 @@
     "build:jsxbin": "node ./vendor/exportToJSX.js -n ./dist/extendscript.js || true",
     "build:cep": "webpack --config cep.config.js --display verbose && rm dist/extendscript.js",
     "build": "npm-run-all --serial build:**",
-    "ci:extendscript": "webpack --config extendscript.config.js --display verbose",
-    "ci:cep": "webpack --config cep.config.js --display verbose",
-    "ci": "export IS_DEV=1 && npm-run-all --serial ci:** installers",
-    "zxp": "create-zxp ./dist",
-    "installers": "cep-packager ./dist",
-    "build-zxp": "npm-run-all build zxp",
-    "build-installers": "npm-run-all build installers"
+    "installer:package": "cep-packager ./dist",
+    "installer:notarize": "node tools/notarize.js",
+    "installer": "npm-run-all --serial installers:**",
   },
   "dependencies": {
     "fs-extra": "^6.0.1"
@@ -35,7 +31,7 @@
     "@types/react-dom": "^16.0.5",
     "cep-bundler-webpack": "0.0.28",
     "cep-interface": "^0.4.2",
-    "cep-packager": "0.0.25",
+    "cep-packager": "github:adobe-extension-tools/cep-packager#catalina",
     "console-feed": "^2.8.6",
     "create-zxp": "^0.1.0",
     "extendscript-es5-shim-ts": "0.0.1",

@@ -9,5 +9,11 @@ platform:
 
 steps:
 - name: build
+  environment:
+    CEP_ID: com.aedt.adobe-ide
+    CEP_NOTARIZE_USERNAME:
+      from_secret: CEP_NOTARIZE_USERNAME
+    CEP_NOTARIZE_APP_PASSWORD:
+      from_secret: CEP_NOTARIZE_APP_PASSWORD
   commands:
     - ./ci.sh
