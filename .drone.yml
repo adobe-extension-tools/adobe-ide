@@ -8,7 +8,10 @@ platform:
   arch: amd64
 
 steps:
-- name: greeting
+- name: build
   commands:
-  - npm install
-  - npm run build-installers
+    - export PATH=$HOME/bin:/usr/local/bin:$PATH
+    - export NVM_DIR="$HOME/.nvm"
+    - "[ -s \"/usr/local/opt/nvm/nvm.sh\" ] && . \"/usr/local/opt/nvm/nvm.sh\""
+    - npm install
+    - npm run build-installers
