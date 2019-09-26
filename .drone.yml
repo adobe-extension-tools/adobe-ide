@@ -10,4 +10,4 @@ platform:
 steps:
 - name: build
   commands:
-    - /bin/zsh ci.sh
+    - ./ci.sh
