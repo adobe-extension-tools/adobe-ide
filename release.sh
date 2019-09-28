@@ -9,4 +9,4 @@ export NVM_DIR="$HOME/.nvm"
 nvm use 10
 
 export GH_RELEASE_GITHUB_API_TOKEN=$GITHUB_API_KEY
-npm gh-release --tag_name $DRONE_TAG --work-path ./archive --owner adobe-extension-tools --repo adobe-ide --yes 
+./node_modules/.bin/gh-release --tag_name $DRONE_TAG --work-path ./archive --owner adobe-extension-tools --repo adobe-ide --yes 
