@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.0.10] - 2019-09-28
+
+### Changed
+- Signing .pkg installer
+
 ## [0.0.9] - 2019-09-28
 
 ### Changed

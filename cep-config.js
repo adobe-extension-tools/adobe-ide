@@ -16,9 +16,9 @@ module.exports = {
     },
     macOs: {
       dest: `${__dirname}/archive/adobe-ide.pkg`,
-      // keychain: 'login.keychain',
-      // keychainPassword: '',
-      // identifier: 'Developer ID Installer: Koen Schmeets',
+      keychain: 'login.keychain',
+      keychainPassword: process.env.KEYCHAIN_PASSWORD,
+      identifier: 'Developer ID Installer: Koen Schmeets',
       resources: `${__dirname}/resources/macos`
     },
     windows: {
