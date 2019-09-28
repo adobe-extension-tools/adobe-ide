@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.0.12] - 2019-09-28
+
+### Changed
+- Added signing certificate to CI
+
 ## [0.0.11] - 2019-09-28
 
 ### Changed
