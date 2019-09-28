@@ -5,6 +5,7 @@ const version = packageJson.version
 
 module.exports = {
   packager: {
+    debug: true,
     name: name,
     bundleId: bundleId,
     version: version,
