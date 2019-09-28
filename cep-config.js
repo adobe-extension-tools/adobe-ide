@@ -2,6 +2,7 @@ const packageJson = require('./package.json')
 const name = packageJson.cep.name
 const bundleId = packageJson.cep.id
 const version = packageJson.version
+
 module.exports = {
   packager: {
     name: name,

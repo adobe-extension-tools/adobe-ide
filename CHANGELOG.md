@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.0.11] - 2019-09-28
+
+### Changed
+- Fix adding keychain password
+
 ## [0.0.10] - 2019-09-28
 
 ### Changed
