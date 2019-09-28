@@ -10,7 +10,7 @@ nvm use 10
 export GH_RELEASE_GITHUB_API_TOKEN=$GITHUB_API_KEY
 ./node_modules/.bin/gh-release \
   --tag_name $DRONE_TAG \
-  --target_commitish $DRONE_BRANCH \
+  --target_commitish master \
   --name $DRONE_TAG \
   --description "Release of $DRONE_TAG" \
   --assets "./archive/adobe-ide.exe,./archive/adobe-ide.pkg,./archive/adobe-ide.zxp" \
