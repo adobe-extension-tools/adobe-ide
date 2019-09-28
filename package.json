@@ -1,11 +1,15 @@
 {
   "name": "adobe-ide",
-  "version": "0.0.4",
+  "version": "0.0.7",
   "cep": {
     "name": "Adobe IDE",
     "id": "com.aedt.adobe-ide",
     "hosts": "*",
     "debugInProduction": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adobe-extension-tools/adobe-ide.git"
   },
   "main": "index.js",
   "license": "MIT",
