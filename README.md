@@ -54,3 +54,4 @@ npm run build-installers
 ```
 
 (A versioned .pkg and .exe file will be placed inside `archive`.)
+

@@ -1,9 +1,38 @@
+@import '../../node_modules/@spectrum-css/vars/dist/spectrum-global.css';
+@import '../../node_modules/@spectrum-css/vars/dist/spectrum-medium-unique.css';
+@import '../../node_modules/@spectrum-css/vars/dist/spectrum-light.css';
+@import '../../node_modules/@spectrum-css/vars/dist/spectrum-dark.css';
+@import '../../node_modules/@spectrum-css/vars/dist/spectrum-darkest.css';
+@import '../../node_modules/@spectrum-css/page/dist/index-vars.css';
+@import '../../node_modules/@spectrum-css/typography/dist/index-vars.css';
+@import '../../node_modules/@spectrum-css/icon/dist/index-vars.css';
+@import '../../node_modules/@spectrum-css/button/dist/index-vars.css';
+@import '../../node_modules/@spectrum-css/sidenav/dist/index-vars.css';
+@import '../../node_modules/@spectrum-css/tabs/dist/index-vars.css';
+
 html, body {
   padding: 0;
   margin: 0;
 }
 
 body {
-  font-family: sans-serif;
   color: rgb(200, 200, 200);
+}
+
+.app {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  height: 100%;
+}
+
+.app__navigation {
+  /* flex-basis: 40%; */
+  background: red;
+}
+
+.app__content {
+  flex-grow: 1;
+  background: blue;
 }
