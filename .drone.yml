@@ -17,6 +17,7 @@ steps:
       from_secret: CEP_NOTARIZE_APP_PASSWORD
     KEYCHAIN_PASSWORD:
       from_secret: KEYCHAIN_PASSWORD
+    HOME: /Users/vagrant
   commands:
     - ./ci.sh
 - name: release
