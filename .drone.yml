@@ -17,14 +17,14 @@ steps:
       from_secret: CEP_NOTARIZE_APP_PASSWORD
     KEYCHAIN_PASSWORD:
       from_secret: KEYCHAIN_PASSWORD
-    HOME: /Users/vagrant
+    HOME: /Users/koen
   commands:
     - ./ci.sh
 - name: release
   environment:
     GITHUB_API_KEY:
       from_secret: GITHUB_API_KEY
-    HOME: /Users/vagrant
+    HOME: /Users/koen
   when:
     event: tag
     # branch:
