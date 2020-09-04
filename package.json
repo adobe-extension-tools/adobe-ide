@@ -36,7 +36,7 @@
     "cep-bundler-webpack": "0.0.28",
     "cep-interface": "^0.4.2",
     "cep-packager": "github:adobe-extension-tools/cep-packager#catalina",
-    "console-feed": "^2.8.6",
+    "console-feed": "^2.8.10",
     "create-zxp": "^0.1.0",
     "extendscript-es5-shim-ts": "0.0.1",
     "gh-release": "^3.5.0",
